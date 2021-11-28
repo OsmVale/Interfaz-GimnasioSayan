@@ -1,0 +1,43 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onActualizar()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Modificar Estudiante Curso</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="estudianteCurso.id_entrenador" placeholder="Id entrador" formControlName="id_entrenador">
+            <mat-error *ngIf="addressForm.controls['id_entrenador'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="estudianteCurso.id_rutinas" placeholder="Id rutinas" formControlName="id_rutinas">
+            <mat-error *ngIf="addressForm.controls['id_rutinas'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="estudianteCurso.id_personas" placeholder="id_personas" formControlName="id_personas">
+            <mat-error *ngIf="addressForm.controls['id_personas'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="text-align: center;">
+      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Guardar</button>
+      <button mat-raised-button color="primary" routerLink="/estudiante-curso" >Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

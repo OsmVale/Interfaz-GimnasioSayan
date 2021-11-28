@@ -1,0 +1,57 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onAgregar()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Agregar progresos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id persona" formControlName="id_personas">
+            <mat-error *ngIf="addressForm.controls['id_personas'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="peso inicial" formControlName="peso_inicial">
+            <mat-error *ngIf="addressForm.controls['peso_inicial'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="peso meta" formControlName="peso_meta">
+            <mat-error *ngIf="addressForm.controls['peso_meta'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="talla inicial"  formControlName="talla_inicial">
+            <mat-error *ngIf="addressForm.controls['talla_inicial'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="talla meta"  formControlName="talla_meta">
+            <mat-error *ngIf="addressForm.controls['talla_meta'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="text-align: center;">
+      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Agregar</button>
+      <button mat-raised-button color="primary" routerLink="/docente-curso" >Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

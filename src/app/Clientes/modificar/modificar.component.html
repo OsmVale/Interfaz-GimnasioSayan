@@ -1,0 +1,60 @@
+<form [formGroup]="form" novalidate (ngSubmit)="onActualizar()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Actualizar Clientes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="estudiante.id_persona" placeholder="Id Persona" formControlName="id_persona">
+            <mat-error *ngIf="form.controls['id_persona'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="estudiante.id_rutina" placeholder="id rutina" formControlName="id_rutina">
+            <mat-error *ngIf="form.controls['id_rutina'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput [(ngModel)]="estudiante.id_entrenos" placeholder="id entrenos" formControlName="id_entrenos">
+            <mat-error *ngIf="form.controls['id_entrenos'].hasError('required')">
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput [(ngModel)]="estudiante.id_dieta" placeholder="id dieta" formControlName="id_dieta">
+          <mat-error *ngIf="form.controls['id_dieta'].hasError('required')">
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput [(ngModel)]="estudiante.status" placeholder=" status" formControlName="status">
+          <mat-error *ngIf="form.controls['status'].hasError('required')">
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions style="text-align: center;">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Guardar</button>
+      <button mat-raised-button color="primary" routerLink="/estudiantes" >Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
