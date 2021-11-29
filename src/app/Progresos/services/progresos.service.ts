@@ -10,7 +10,7 @@ import { DocenteCurso } from '../mostrar-progresos/mostrar-progresos-datasource'
 export class DocenteCursoService {
 
   /*URL = 'http://localhost:3000/progresos';*/
-  URL = 'https://localhost/progreso';
+  URL = 'https://localhost/progresos';
   constructor(private http : HttpClient)  { }
 
   getDocenteCursos(): Observable<DocenteCurso[]>{

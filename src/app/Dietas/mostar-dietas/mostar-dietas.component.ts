@@ -18,7 +18,7 @@ export class MostarDietasComponent implements AfterViewInit, OnInit {
   dataSource!: MostarCursosDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'dietas', 'listado_dietas', 'fecha_inicio', 'fecha_fin','id_persona'];
+  displayedColumns = ['id', 'dietas', 'listado_dietas', 'fecha_inicio', 'fecha_fin','id_persona','Acciones'];
 
   constructor(private cursoService : CursosService, private router:Router) {
 
@@ -44,7 +44,7 @@ export class MostarDietasComponent implements AfterViewInit, OnInit {
   }
 
   modificarCursos(id:string){
-    this.router.navigate(['/editar-cursos/'+id]);
+    this.router.navigate(['/editar-dieta/'+id]);
     }
 
   ngAfterViewInit(): void {

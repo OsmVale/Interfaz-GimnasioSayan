@@ -7,8 +7,8 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="Id persona" formControlName="id_personas">
-            <mat-error *ngIf="addressForm.controls['id_personas'].hasError('required')">
+            <input matInput placeholder="Id persona" formControlName="id_persona">
+            <mat-error *ngIf="addressForm.controls['id_persona'].hasError('required')">
               <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -33,16 +33,16 @@
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="talla inicial"  formControlName="talla_inicial">
-            <mat-error *ngIf="addressForm.controls['talla_inicial'].hasError('required')">
+            <input matInput placeholder="talla inicial"  formControlName="tallas_inicial">
+            <mat-error *ngIf="addressForm.controls['tallas_inicial'].hasError('required')">
               <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="talla meta"  formControlName="talla_meta">
-            <mat-error *ngIf="addressForm.controls['talla_meta'].hasError('required')">
+            <input matInput placeholder="talla meta"  formControlName="tallas_meta">
+            <mat-error *ngIf="addressForm.controls['tallas_meta'].hasError('required')">
               <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -51,7 +51,7 @@
     </mat-card-content>
     <mat-card-actions style="text-align: center;">
       <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Agregar</button>
-      <button mat-raised-button color="primary" routerLink="/docente-curso" >Cancelar</button>
+      <button mat-raised-button color="primary" routerLink="/progresos" >Cancelar</button>
     </mat-card-actions>
   </mat-card>
 </form>

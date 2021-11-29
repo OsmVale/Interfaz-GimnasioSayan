@@ -15,8 +15,8 @@ export class AgregarComponent {
     id_persona: ['', Validators.required],
     id_rutina: ['', Validators.required],
     id_entrenos: ['', Validators.required],
-    id_dieta: [''],
-    status: ['']
+    id_dieta: ['',Validators.required],
+    status: ['',Validators.required]
   });
 
 
@@ -27,6 +27,7 @@ export class AgregarComponent {
     /*console.log(this.form)*/
 
     const estudiante:Estudiante ={
+
       id:this.form.value.id,
       id_persona:this.form.value.id_persona,
       id_rutina:this.form.value.id_rutina,
@@ -34,7 +35,7 @@ export class AgregarComponent {
       id_dieta: this.form.value.id_dieta,
       status:this.form.value.status
     }
-    /*console.log(estudiante);*/
+    /*console.log(clientes);*/
 
     this.estudiantesService.postEstudiantes(estudiante);
     this.router.navigate(['/clientes']);

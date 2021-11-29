@@ -18,7 +18,7 @@ export class MostrarProgresosComponent implements AfterViewInit, OnInit {
   dataSource!: MostrarDocenteCursoDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'id_docente', 'docente', 'id_curso', 'curso', 'stauts', 'fecha_inicio', 'fecha_fin', 'Acciones'];
+  displayedColumns = ['id', 'id_persona', 'peso_inicial', 'peso_meta', 'tallas_iniciales', 'tallas_metas','Acciones'];
 
 
   constructor(private docenteCursoService : DocenteCursoService, private router:Router) {
@@ -45,7 +45,7 @@ export class MostrarProgresosComponent implements AfterViewInit, OnInit {
   }
 
   modificarDocenteCurso(id:string){
-    this.router.navigate(['/editar-docente-curso/'+id]);
+    this.router.navigate(['/editar-progresos/'+id]);
     }
 
   ngAfterViewInit(): void {

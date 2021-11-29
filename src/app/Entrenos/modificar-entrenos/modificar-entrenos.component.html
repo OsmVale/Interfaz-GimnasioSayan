@@ -1,7 +1,7 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onActualizar()">
   <mat-card class="shipping-card">
     <mat-card-header>
-      <mat-card-title>Modificar Estudiante Curso</mat-card-title>
+      <mat-card-title>Modificar entrenos</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
@@ -26,8 +26,8 @@
 
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput [(ngModel)]="estudianteCurso.id_personas" placeholder="id_personas" formControlName="id_personas">
-            <mat-error *ngIf="addressForm.controls['id_personas'].hasError('required')">
+            <input matInput [(ngModel)]="estudianteCurso.id_persona" placeholder="id_personas" formControlName="id_persona">
+            <mat-error *ngIf="addressForm.controls['id_persona'].hasError('required')">
               <strong>required</strong>
             </mat-error>
           </mat-form-field>
@@ -37,7 +37,7 @@
     </mat-card-content>
     <mat-card-actions style="text-align: center;">
       <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Guardar</button>
-      <button mat-raised-button color="primary" routerLink="/estudiante-curso" >Cancelar</button>
+      <button mat-raised-button color="primary" routerLink="/entrenos" >Cancelar</button>
     </mat-card-actions>
   </mat-card>
 </form>

@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
 })
 export class EstudianteCursoService {
 
-  /*URL = 'http://localhost:3000/estudiante-curso';*/
-  URL = 'https://api-rest-colegio.herokuapp.com/estudiante-curso';
+  /*URL = 'http://localhost:3000/entrenos';*/
+  URL = 'https://localhost:3000/entrenos';
   constructor(private http : HttpClient)  { }
 
   getEstudianteCursos(): Observable<EstudianteCurso[]>{

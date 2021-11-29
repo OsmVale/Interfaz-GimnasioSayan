@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class DocentesService {
 
   /* URL = 'http://localhost:3000/entrenador';*/
-   URL = 'https://localhost/entrenador';
+   URL = 'https://localhost:3000/entrenador';
 
   constructor(private http : HttpClient)  { }
 

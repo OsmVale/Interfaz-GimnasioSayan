@@ -24,9 +24,9 @@ export class ModificarDietasComponent {
     id: [''],
     dietas: ['', Validators.required],
     listado_dietas: ['', Validators.required],
-    fecha_inicio:[''],
-    fecha_fin:[''],
-    id_persona:[''],
+    fecha_inicio:['',Validators.required],
+    fecha_fin:['',Validators.required],
+    id_persona:['',Validators.required],
 
   });
 
@@ -53,7 +53,7 @@ export class ModificarDietasComponent {
     }
     onActualizar(){
       this.cursosService.putCursos(this.curso.id, this.curso);
-      this.router.navigate(['/Dietas'])
+      this.router.navigate(['/dieta'])
 
     }
 }

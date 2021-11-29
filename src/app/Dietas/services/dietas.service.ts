@@ -8,8 +8,8 @@ import { Curso } from '../mostar-dietas/mostar-dietas-datasource';
 })
 export class CursosService {
 
-  /*URL = 'http://localhost:3000/dietas';*/
-  URL = 'https://localhost/dietas';
+  /*URL = 'http://localhost:3000/dieta';*/
+  URL = 'https://localhost:3000/dieta';
   constructor(private http : HttpClient)  { }
 
   getCursos(): Observable<Curso[]>{

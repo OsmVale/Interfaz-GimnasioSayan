@@ -31,7 +31,7 @@ export class AgregarEntrenadorComponent {
     console.log(docente);
 
     this.docentesService.postDocentes(docente);
-    this.router.navigate(['/maestros']);
+    this.router.navigate(['/entrenador']);
     setTimeout(location.reload.bind(location), 500);
 
   }

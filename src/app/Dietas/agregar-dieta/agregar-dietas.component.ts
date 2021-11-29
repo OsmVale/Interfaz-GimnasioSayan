@@ -12,8 +12,12 @@ import { Curso } from '../mostar-dietas/mostar-dietas-datasource';
 export class AgregarDietasComponent {
   addressForm = this.fb.group({
     id: [''],
-    nombre: ['', Validators.required],
-    descripcion: ['', Validators.required]
+    dietas: ['', Validators.required],
+    listado_dietas: ['', Validators.required],
+    fecha_inicio: ['', Validators.required],
+    fecha_fin: ['', Validators.required],
+    id_persona: ['', Validators.required]
+
   });
 
 
@@ -33,7 +37,7 @@ export class AgregarDietasComponent {
     /*console.log(persona);*/
 
     this.cursosService.postCursos(curso);
-    this.router.navigate(['/Dietas']);
+    this.router.navigate(['/dieta']);
     setTimeout(location.reload.bind(location), 500);
 
   }

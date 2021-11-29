@@ -7,11 +7,11 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // TODO: Replace this with your own data model type
 export interface DocenteCurso {
   id: string;
-  id_personas: string;
+  id_persona: string;
   peso_inicial: string;
   peso_meta: string;
-  talla_inicial: string;
-  talla_meta: string;
+  tallas_inicial: string;
+  tallas_meta: string;
 
 }
 
@@ -26,7 +26,7 @@ const EXAMPLE_DATA: DocenteCurso[] = [
  * (including sorting, pagination, and filtering).
  */
 export class MostrarDocenteCursoDataSource extends DataSource<DocenteCurso> {
-  data: DocenteCurso[] = EXAMPLE_DATA;
+  data: DocenteCurso[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -83,8 +83,12 @@ export class MostrarDocenteCursoDataSource extends DataSource<DocenteCurso> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.peso_inicial, b.peso_inicial, isAsc);
+        case 'id_persona': return compare(a.id_persona, b.id_persona, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'peso_inicial': return compare(a.peso_inicial, b.peso_inicial, isAsc);
+        case 'peso_meta': return compare(a.peso_meta, b.peso_meta, isAsc);
+        case 'tallas_inicial': return compare(a.tallas_inicial, b.tallas_inicial, isAsc);
+        case 'tallas_meta': return compare(a.tallas_meta, b.tallas_meta, isAsc);
         default: return 0;
       }
     });
@@ -92,6 +96,6 @@ export class MostrarDocenteCursoDataSource extends DataSource<DocenteCurso> {
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a: string | number, b: string | number, isAsc: boolean): number {
+function compare(a: string | number|Date, b: string | number|Date, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

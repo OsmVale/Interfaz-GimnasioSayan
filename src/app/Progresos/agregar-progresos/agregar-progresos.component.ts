@@ -13,9 +13,9 @@ export class AgregarProgresosComponent {
   addressForm = this.fb.group({
     id: [''],
     id_personas: ['', Validators.required],
-    peso_inicial: [''],
+    peso_inicial: ['',Validators.required],
     peso_meta: ['', Validators.required],
-    talla_inicial: [''],
+    talla_inicial: ['',Validators.required],
     talla_meta: ['', Validators.required],
 
   });
@@ -38,7 +38,7 @@ export class AgregarProgresosComponent {
     /*console.log(persona);*/
 
     this.docenteCursoService.postDocenteCursos(docenteCurso);
-    this.router.navigate(['/docente-curso']);
+    this.router.navigate(['/progresos']);
     setTimeout(location.reload.bind(location), 500);
 
   }

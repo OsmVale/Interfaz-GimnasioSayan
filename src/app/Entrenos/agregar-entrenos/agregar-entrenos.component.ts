@@ -13,7 +13,7 @@ export class AgregarEntrenosComponent {
   addressForm = this.fb.group({
     id: [''],
     id_entrenador: ['', Validators.required],
-    id_rutinas: [''],
+    id_rutinas: ['',Validators.required],
     id_personas: ['', Validators.required],
 
   });
@@ -33,7 +33,7 @@ export class AgregarEntrenosComponent {
     /*console.log(persona);*/
 
     this.estudianteCursoService.postEstudianteCursos(estudiantecurso);
-    this.router.navigate(['/estudiante-curso']);
+    this.router.navigate(['/entrenos']);
     setTimeout(location.reload.bind(location), 500);
 
   }

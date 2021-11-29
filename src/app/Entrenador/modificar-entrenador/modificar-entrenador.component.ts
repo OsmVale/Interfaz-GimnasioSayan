@@ -21,7 +21,7 @@ export class ModificarEntrenadorComponent implements OnInit  {
   form = this.fb.group({
     id: [''],
     id_persona: ['', Validators.required],
-    status: ['']
+    status: ['',Validators.required]
   });
 
   constructor(private fb: FormBuilder,
@@ -46,7 +46,7 @@ export class ModificarEntrenadorComponent implements OnInit  {
   }
   onActualizar(){
     this.docentesService.putDocentes(this.docente.id, this.docente);
-    this.router.navigate(['/maestros'])
+    this.router.navigate(['/entrenador'])
 
   }
 }

@@ -25,7 +25,7 @@ const EXAMPLE_DATA: Curso[] = [
  * (including sorting, pagination, and filtering).
  */
 export class MostarCursosDataSource extends DataSource<Curso> {
-  data: Curso[] = EXAMPLE_DATA;
+  data: Curso[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -82,8 +82,12 @@ export class MostarCursosDataSource extends DataSource<Curso> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.dietas, b.dietas, isAsc);
+        case 'dietas': return compare(a.dietas, b.dietas, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'listado_dietas': return compare(a.listado_dietas, b.listado_dietas, isAsc);
+        case 'fecha_inicio': return compare(a.fecha_inicio, b.fecha_inicio, isAsc);
+        case 'fecha_fin': return compare(a.fecha_fin, b.fecha_fin, isAsc);
+        case 'id_persona': return compare(a.id_persona, b.id_persona, isAsc);
         default: return 0;
       }
     });
@@ -91,6 +95,6 @@ export class MostarCursosDataSource extends DataSource<Curso> {
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a: string | number, b: string | number, isAsc: boolean): number {
+function compare(a: string | number|Date, b: string | number|Date, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

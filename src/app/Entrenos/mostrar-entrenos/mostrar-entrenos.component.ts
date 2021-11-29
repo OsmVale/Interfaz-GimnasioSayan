@@ -45,7 +45,7 @@ export class MostrarEntrenosComponent implements AfterViewInit, OnInit {
   }
 
   modificarEstudianteCurso(id:string){
-    this.router.navigate(['/editar-estudiante-curso/'+id]);
+    this.router.navigate(['/editar-entrenos/'+id]);
     }
 
   ngAfterViewInit(): void {

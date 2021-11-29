@@ -9,7 +9,7 @@ export interface EstudianteCurso {
   id: string;
   id_entrenador: string;
   id_rutinas: string;
-  id_personas: string;
+  id_persona: string;
 
 }
 
@@ -24,7 +24,7 @@ const EXAMPLE_DATA: EstudianteCurso[] = [
  * (including sorting, pagination, and filtering).
  */
 export class MostrarEstudianteCursoDataSource extends DataSource<EstudianteCurso> {
-  data: EstudianteCurso[] = EXAMPLE_DATA;
+  data: EstudianteCurso[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -81,8 +81,10 @@ export class MostrarEstudianteCursoDataSource extends DataSource<EstudianteCurso
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.id_rutinas, b.id_rutinas, isAsc);
+        case 'id_persona': return compare(a.id_persona, b.id_persona, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'id_rutinas': return compare(a.id_rutinas, b.id_rutinas, isAsc);
+        case 'id_entrenador': return compare(a.id_entrenador, b.id_entrenador, isAsc);
         default: return 0;
       }
     });
@@ -90,6 +92,6 @@ export class MostrarEstudianteCursoDataSource extends DataSource<EstudianteCurso
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a: string | number, b: string | number, isAsc: boolean): number {
+function compare(a: string | number|Date, b: string | number|Date, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

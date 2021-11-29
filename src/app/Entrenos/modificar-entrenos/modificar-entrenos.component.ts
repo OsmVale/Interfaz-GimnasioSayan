@@ -21,7 +21,7 @@ export class ModificarEntrenosComponent {
   addressForm = this.fb.group({
     id: [''],
     id_entrenador: ['', Validators.required],
-    id_rutinas: [''],
+    id_rutinas: ['',Validators.required],
     id_personas: ['', Validators.required],
 
   });
@@ -49,7 +49,7 @@ export class ModificarEntrenosComponent {
     }
     onActualizar(){
       this.estudianteCursoService.putEstudianteCursos(this.estudianteCurso.id, this.estudianteCurso);
-      this.router.navigate(['/estudiante-curso'])
+      this.router.navigate(['/entrenos'])
 
     }
 }

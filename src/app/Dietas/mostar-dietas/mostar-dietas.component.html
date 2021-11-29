@@ -1,6 +1,6 @@
 <div class="mat-elevation-z8">
   <mat-toolbar style="background-color:rgb(241, 218, 87);" >
-    <span>Cursos</span>
+    <span>Dietas</span>
     <div class="example-spacer"></div>
     <button mat-raised-button color="primary" routerLink="/agregar-cursos">Agregar</button>
   </mat-toolbar>
@@ -28,8 +28,8 @@
     </ng-container>
 
     <ng-container matColumnDef="fecha_fin">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>listado_dietas</th>
-      <td mat-cell *matCellDef="let row">{{row.listado_dietas}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>fecha_fin</th>
+      <td mat-cell *matCellDef="let row">{{row.fecha_fin}}</td>
     </ng-container>
 
     <ng-container matColumnDef="id_persona">

@@ -25,8 +25,8 @@ export class ModificarComponent implements OnInit {
     id_persona: ['', Validators.required],
     id_rutina: ['', Validators.required],
     id_entrenos: ['', Validators.required],
-    id_dieta: [''],
-    status: ['']
+    id_dieta: ['',Validators.required],
+    status: ['',Validators.required]
   });
 
   constructor(private fb: FormBuilder, private router:Router,

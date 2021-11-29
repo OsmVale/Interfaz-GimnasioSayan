@@ -8,7 +8,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 export interface Docente {
   "id": string,
   "id_persona": string,
-  "status": string
+  "status": string,
 }
 
 // TODO: replace this with real data from your application
@@ -79,8 +79,9 @@ export class MostrarDocentesDataSource extends DataSource<Docente > {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.id_persona, b.id_persona, isAsc);
+        case 'status': return compare(a.status, b.status, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'id_persona': return compare(a.id_persona, b.id_persona, isAsc);
         default: return 0;
       }
     });
@@ -88,6 +89,6 @@ export class MostrarDocentesDataSource extends DataSource<Docente > {
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a: string | number, b: string | number, isAsc: boolean): number {
+function compare(a: string | number|Date, b: string | number|Date, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

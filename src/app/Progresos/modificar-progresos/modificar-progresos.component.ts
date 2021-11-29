@@ -13,7 +13,7 @@ export class ModificarProgresosComponent {
 
   docenteCurso: DocenteCurso ={
     id: '',
-    id_personas: '',
+    id_persona: '',
     peso_inicial: '',
     peso_meta: '',
     talla_inicial: '',
@@ -23,9 +23,9 @@ export class ModificarProgresosComponent {
   addressForm = this.fb.group({
     id: [''],
     id_personas: ['', Validators.required],
-    peso_inicial: [''],
+    peso_inicial: ['',Validators.required],
     peso_meta: ['', Validators.required],
-    talla_inicial: [''],
+    talla_inicial: ['',Validators.required],
     talla_meta: ['', Validators.required],
 
   });
@@ -54,7 +54,7 @@ export class ModificarProgresosComponent {
     }
     onActualizar(){
       this.docenteCursoService.putDocenteCursos(this.docenteCurso.id, this.docenteCurso);
-      this.router.navigate(['/docente-curso'])
+      this.router.navigate(['/progresos'])
 
     }
 }

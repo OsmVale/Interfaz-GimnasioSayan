@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class EstudiantesService {
 
   /*URL = 'http://localhost:3000/clientes';*/
-  URL = 'https://localhost/clientes';
+  URL = 'https://localhost:3000/cliente';
   constructor(private httClient : HttpClient)  { }
 
   getEstudiantes(): Observable<Estudiante[]>{
